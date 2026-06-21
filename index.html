@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harbor | Software Built for Industrial Businesses</title>
+  <meta name="description" content="Harbor is modern software for industrial businesses. Manage customers, quotes, orders, assets, payments, and operations in one calm, connected place." />
+
+  <style>
+    :root {
+      --navy: #253746;
+      --blue: #4F7DF3;
+      --green: #5FBF8F;
+      --sand: #F6F1E8;
+      --white: #FFFFFF;
+      --text: #1f2933;
+      --muted: #5f6b76;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid #eef1f3;
+      background: rgba(255,255,255,.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 26px;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 44px;
+      position: relative;
+    }
+
+    .logo-hill {
+      width: 46px;
+      height: 22px;
+      background: var(--navy);
+      border-radius: 100% 100% 45% 45%;
+      position: absolute;
+      bottom: 15px;
+      left: 1px;
+    }
+
+    .logo-flag {
+      width: 6px;
+      height: 30px;
+      background: var(--green);
+      position: absolute;
+      left: 31px;
+      top: 2px;
+      border-radius: 6px;
+    }
+
+    .logo-wave,
+    .logo-wave:before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--blue);
+      left: 4px;
+      right: 4px;
+    }
+
+    .logo-wave {
+      bottom: 6px;
+    }
+
+    .logo-wave:before {
+      top: 9px;
+      left: 0;
+      right: 0;
+      opacity: .75;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(79,125,243,.25);
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--sand) 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: .98;
+      margin: 0 0 26px;
+      color: var(--navy);
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 0 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 10px 22px rgba(79,125,243,.24);
+    }
+
+    .btn-secondary {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid #e8edf1;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 24px 60px rgba(37,55,70,.12);
+    }
+
+    .illustration {
+      height: 360px;
+      background:
+        radial-gradient(circle at 70% 20%, #dceeff 0 12%, transparent 13%),
+        linear-gradient(180deg, #f9fbff 0%, #eaf6ff 100%);
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .water {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 120px;
+      background: repeating-linear-gradient(
+        0deg,
+        #cfe7ff 0 14px,
+        #b9dcff 14px 24px
+      );
+      opacity: .7;
+    }
+
+    .island {
+      position: absolute;
+      width: 270px;
+      height: 96px;
+      background: var(--navy);
+      border-radius: 60% 60% 20% 20%;
+      bottom: 72px;
+      right: 52px;
+    }
+
+    .lighthouse {
+      position: absolute;
+      right: 144px;
+      bottom: 142px;
+      width: 58px;
+      height: 150px;
+      background: var(--navy);
+      clip-path: polygon(32% 0, 68% 0, 86% 100%, 14% 100%);
+    }
+
+    .light {
+      position: absolute;
+      right: 139px;
+      bottom: 272px;
+      width: 68px;
+      height: 34px;
+      background: var(--green);
+      border-radius: 8px 8px 2px 2px;
+    }
+
+    .boat {
+      position: absolute;
+      left: 92px;
+      bottom: 58px;
+      width: 140px;
+      height: 48px;
+      background: var(--green);
+      border-radius: 0 0 40px 40px;
+    }
+
+    .boat:before {
+      content: "";
+      position: absolute;
+      width: 86px;
+      height: 44px;
+      background: white;
+      top: -38px;
+      left: 28px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .features {
+      padding: 78px 0;
+      background: white;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      border: 1px solid #e8edf1;
+      border-radius: 22px;
+      padding: 24px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      margin: 0 auto 16px;
+      background: var(--sand);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .products {
+      padding: 84px 0;
+      background: var(--sand);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 26px;
+      padding: 30px;
+      border: 1px solid #eadfce;
+      box-shadow: 0 14px 30px rgba(37,55,70,.06);
+    }
+
+    .product-card h3 {
+      color: var(--navy);
+      font-size: 28px;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #eef6f3;
+      color: var(--green);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .story {
+      padding: 90px 0;
+      background: var(--navy);
+      color: white;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .story h2 {
+      font-size: clamp(36px, 4vw, 58px);
+      line-height: 1.08;
+      margin: 0;
+      letter-spacing: -0.05em;
+    }
+
+    .story p {
+      color: #d8e0e6;
+      font-size: 18px;
+      line-height: 1.75;
+      margin: 0 0 18px;
+    }
+
+    .cta {
+      padding: 84px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--blue), #2f66d8);
+      color: white;
+      border-radius: 34px;
+      padding: 58px 28px;
+      box-shadow: 0 22px 50px rgba(79,125,243,.24);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(36px, 4vw, 58px);
+      margin: 0 0 14px;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #eef4ff;
+    }
+
+    .cta-box .btn-primary {
+      background: white;
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid #eef1f3;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .story-grid,
+      .product-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 58px 0;
+      }
+
+      .hero-card {
+        padding: 18px;
+      }
+
+      .illustration {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="logo-icon">
+        <span class="logo-hill"></span>
+        <span class="logo-flag"></span>
+        <span class="logo-wave"></span>
+      </span>
+      harbor
+    </a>
+
+    <nav class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#customers">Customers</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#demo" class="nav-cta">Book a Demo</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Software built for industrial businesses</div>
+      <h1>Run your business on Harbor.</h1>
+      <p>
+        Harbor brings customers, quotes, orders, assets, payments, and operations into one calm, connected place for industrial companies.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#demo" class="btn-primary">Book a Demo</a>
+        <a href="#products" class="btn-secondary">See how it works →</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="illustration">
+        <div class="water"></div>
+        <div class="island"></div>
+        <div class="lighthouse"></div>
+        <div class="light"></div>
+        <div class="boat"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Everything your industrial business needs, all in one place.</h2>
+      <p>
+        Built for distributors, manufacturers, suppliers, and service companies that are tired of running the business from email, spreadsheets, and disconnected systems.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <strong>Customers</strong>
+        <span>Portals, accounts, requests, and quote history.</span>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📝</div>
+        <strong>Quotes</strong>
+        <span>Draft orders, lead times, line item notes, and approvals.</span>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📦</div>
+        <strong>Orders</strong>
+        <span>Tracking, fulfillment, order status, and updates.</span>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🚜</div>
+        <strong>Assets</strong>
+        <span>Equipment, service history, manuals, and recommended parts.</span>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💳</div>
+        <strong>Payments</strong>
+        <span>Customer payments, supplier payouts, and finance workflows.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Start with Anchor. Grow into Harbor.</h2>
+      <p>
+        Harbor is the platform. Anchor is the operating system your team uses every day.
+      </p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="pill">Flagship</span>
+        <h3>Anchor</h3>
+        <p>
+          The operating system for customer requests, quotes, orders, assets, tracking, and internal operations.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <span class="pill">AI</span>
+        <h3>Beacon</h3>
+        <p>
+          AI intelligence for lead times, quote assistance, maintenance recommendations, and internal knowledge.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <span class="pill">Manufacturing</span>
+        <h3>Forge</h3>
+        <p>
+          Job tracking, production workflows, supplier management, BOMs, and manufacturing operations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="about">
+  <div class="container story-grid">
+    <div>
+      <div class="eyebrow">Built from real industrial work</div>
+      <h2>Not software for software people.</h2>
+    </div>
+
+    <div>
+      <p>
+        Harbor is being built from the ground up inside real industrial businesses where customers request hard-to-find parts, suppliers ship from different locations, quotes change, lead times matter, and operations rarely fit inside a standard shopping cart.
+      </p>
+      <p>
+        The goal is simple: give industrial teams a calm, reliable system that helps them serve customers better and run the business with more clarity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="demo">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to run on Harbor?</h2>
+      <p>
+        Harbor is currently being developed with industrial distributors, manufacturers, and service companies in mind.
+      </p>
+      <a href="mailto:hello@runonharbor.com" class="btn-primary">Contact Harbor</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© Harbor. Software built for industrial businesses.</span>
+    <span>runonharbor.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
