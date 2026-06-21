@@ -60,7 +60,6 @@
       color:var(--navy);
     }
 
-    /* Logo Option 1 - Harbor Hill */
     .harbor-logo-icon{
       width:58px;
       height:46px;
@@ -204,6 +203,7 @@
       border-radius:30px;
       padding:14px;
       box-shadow:0 24px 60px rgba(37,55,70,.12);
+      overflow:hidden;
     }
 
     .hero-art-card img{
@@ -237,6 +237,16 @@
       font-size:18px;
       line-height:1.65;
       margin:0;
+    }
+
+    .benefits-image{
+      width:100%;
+      max-width:920px;
+      display:block;
+      margin:0 auto 48px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      box-shadow:0 18px 42px rgba(37,55,70,.08);
     }
 
     .feature-grid{
@@ -292,9 +302,20 @@
     .product-card{
       background:white;
       border-radius:28px;
-      padding:30px;
+      padding:24px;
       border:1px solid #eadfce;
       box-shadow:0 14px 30px rgba(37,55,70,.06);
+      overflow:hidden;
+    }
+
+    .product-image{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      border-radius:22px;
+      border:1px solid var(--line);
+      margin-bottom:22px;
+      background:#fff;
     }
 
     .pill{
@@ -483,6 +504,8 @@
 
       .hero-art-card{padding:10px;}
 
+      .product-image{height:auto;}
+
       .contact-form{padding:30px;}
 
       .feature-grid{gap:14px;}
@@ -530,7 +553,7 @@
     </div>
 
     <div class="hero-art-card">
-      <img src="harbor-illustrations.png" alt="Harbor software illustration for industrial businesses">
+      <img src="harbor-hero-industrial-dock.png" alt="Harbor software built for industrial businesses">
     </div>
   </div>
 </section>
@@ -543,6 +566,8 @@
         Built for distributors, manufacturers, suppliers, and service companies that are tired of running the business from email, spreadsheets, and disconnected systems.
       </p>
     </div>
+
+    <img src="harbor-benefits-icons.png" class="benefits-image" alt="Harbor benefits for industrial businesses">
 
     <div class="feature-grid">
       <div class="feature">
@@ -589,6 +614,7 @@
 
     <div class="product-grid">
       <div class="product-card">
+        <img src="harbor-anchor-dashboard.png" class="product-image" alt="Anchor operations platform">
         <span class="pill">Flagship</span>
         <h3>Anchor</h3>
         <p>
@@ -597,6 +623,7 @@
       </div>
 
       <div class="product-card">
+        <img src="harbor-beacon-lighthouse.png" class="product-image" alt="Beacon AI intelligence">
         <span class="pill">AI</span>
         <h3>Beacon</h3>
         <p>
@@ -605,6 +632,7 @@
       </div>
 
       <div class="product-card">
+        <img src="harbor-forge-manufacturing.png" class="product-image" alt="Forge manufacturing operations">
         <span class="pill">Manufacturing</span>
         <h3>Forge</h3>
         <p>
