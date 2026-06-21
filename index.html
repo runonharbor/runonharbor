@@ -3,486 +3,552 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Harbor | Software Built for Industrial Businesses</title>
   <meta name="description" content="Harbor is modern software for industrial businesses. Manage customers, quotes, orders, assets, payments, and operations in one calm, connected place." />
 
   <style>
     :root {
-      --navy: #253746;
-      --blue: #4F7DF3;
-      --green: #5FBF8F;
-      --sand: #F6F1E8;
-      --white: #FFFFFF;
-      --text: #1f2933;
-      --muted: #5f6b76;
+      --navy:#253746;
+      --blue:#4F7DF3;
+      --green:#5FBF8F;
+      --sand:#F6F1E8;
+      --white:#FFFFFF;
+      --text:#1f2933;
+      --muted:#5f6b76;
+      --line:#e8edf1;
     }
 
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:var(--white);
     }
 
-    body {
-      margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--white);
+    a{text-decoration:none;color:inherit;}
+
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 24px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    header{
+      padding:24px 0;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.92);
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(10px);
     }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
     }
 
-    header {
-      padding: 28px 0;
-      border-bottom: 1px solid #eef1f3;
-      background: rgba(255,255,255,.9);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--navy);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    .harbor-logo-icon{
+      width:52px;
+      height:42px;
+      position:relative;
+      display:inline-block;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 26px;
-      color: var(--navy);
-      letter-spacing: -0.03em;
+    .harbor-hill{
+      position:absolute;
+      left:3px;
+      bottom:13px;
+      width:44px;
+      height:24px;
+      background:var(--navy);
+      border-radius:60% 60% 35% 35%;
     }
 
-    .logo-icon {
-      width: 48px;
-      height: 44px;
-      position: relative;
+    .harbor-flag{
+      position:absolute;
+      left:31px;
+      top:3px;
+      width:6px;
+      height:29px;
+      background:var(--green);
+      border-radius:8px;
     }
 
-    .logo-hill {
-      width: 46px;
-      height: 22px;
-      background: var(--navy);
-      border-radius: 100% 100% 45% 45%;
-      position: absolute;
-      bottom: 15px;
-      left: 1px;
+    .harbor-water{
+      position:absolute;
+      left:5px;
+      bottom:4px;
+      width:42px;
+      height:5px;
+      background:var(--blue);
+      border-radius:999px;
     }
 
-    .logo-flag {
-      width: 6px;
-      height: 30px;
-      background: var(--green);
-      position: absolute;
-      left: 31px;
-      top: 2px;
-      border-radius: 6px;
+    .harbor-water:after{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:42px;
+      height:5px;
+      background:var(--blue);
+      border-radius:999px;
+      opacity:.65;
     }
 
-    .logo-wave,
-    .logo-wave:before {
-      content: "";
-      position: absolute;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--blue);
-      left: 4px;
-      right: 4px;
+    .harbor-wordmark{
+      font-size:30px;
+      font-weight:800;
+      letter-spacing:-.05em;
+      color:var(--navy);
     }
 
-    .logo-wave {
-      bottom: 6px;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:15px;
+      font-weight:650;
+      color:var(--navy);
     }
 
-    .logo-wave:before {
-      top: 9px;
-      left: 0;
-      right: 0;
-      opacity: .75;
+    .nav-cta{
+      background:var(--blue);
+      color:white;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 8px 18px rgba(79,125,243,.22);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--navy);
+    .hero{
+      padding:86px 0 72px;
+      background:linear-gradient(180deg,#fff 0%,var(--sand) 100%);
+      overflow:hidden;
     }
 
-    .nav-cta {
-      background: var(--blue);
-      color: white;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 8px 18px rgba(79,125,243,.25);
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:54px;
+      align-items:center;
     }
 
-    .hero {
-      padding: 88px 0 70px;
-      background: linear-gradient(180deg, #ffffff 0%, var(--sand) 100%);
-      overflow: hidden;
+    .eyebrow{
+      color:var(--green);
+      font-weight:850;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:13px;
+      margin-bottom:18px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 52px;
-      align-items: center;
+    h1{
+      font-size:clamp(48px,6vw,78px);
+      line-height:.98;
+      margin:0 0 26px;
+      color:var(--navy);
+      letter-spacing:-.065em;
     }
 
-    .eyebrow {
-      color: var(--green);
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-bottom: 18px;
+    .hero p{
+      font-size:21px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:620px;
+      margin:0 0 34px;
     }
 
-    h1 {
-      font-size: clamp(48px, 6vw, 78px);
-      line-height: .98;
-      margin: 0 0 26px;
-      color: var(--navy);
-      letter-spacing: -0.06em;
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
-    .hero p {
-      font-size: 21px;
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 620px;
-      margin: 0 0 34px;
+    .btn-primary{
+      background:var(--blue);
+      color:white;
+      padding:15px 24px;
+      border-radius:999px;
+      font-weight:850;
+      box-shadow:0 10px 22px rgba(79,125,243,.24);
+      display:inline-block;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
+    .btn-secondary{
+      color:var(--blue);
+      font-weight:850;
+      display:inline-block;
     }
 
-    .btn-primary {
-      background: var(--blue);
-      color: white;
-      padding: 15px 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      box-shadow: 0 10px 22px rgba(79,125,243,.24);
+    .hero-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 24px 60px rgba(37,55,70,.12);
     }
 
-    .btn-secondary {
-      color: var(--blue);
-      font-weight: 800;
-    }
-
-    .hero-card {
-      background: white;
-      border: 1px solid #e8edf1;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 24px 60px rgba(37,55,70,.12);
-    }
-
-    .illustration {
-      height: 360px;
+    .illustration{
+      height:360px;
       background:
-        radial-gradient(circle at 70% 20%, #dceeff 0 12%, transparent 13%),
-        linear-gradient(180deg, #f9fbff 0%, #eaf6ff 100%);
-      border-radius: 22px;
-      position: relative;
-      overflow: hidden;
+        radial-gradient(circle at 72% 18%,#dceeff 0 12%,transparent 13%),
+        linear-gradient(180deg,#f9fbff 0%,#eaf6ff 100%);
+      border-radius:24px;
+      position:relative;
+      overflow:hidden;
     }
 
-    .water {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 120px;
-      background: repeating-linear-gradient(
-        0deg,
-        #cfe7ff 0 14px,
-        #b9dcff 14px 24px
-      );
-      opacity: .7;
+    .water{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:120px;
+      background:repeating-linear-gradient(0deg,#cfe7ff 0 14px,#b9dcff 14px 24px);
+      opacity:.7;
     }
 
-    .island {
-      position: absolute;
-      width: 270px;
-      height: 96px;
-      background: var(--navy);
-      border-radius: 60% 60% 20% 20%;
-      bottom: 72px;
-      right: 52px;
+    .island{
+      position:absolute;
+      width:270px;
+      height:96px;
+      background:var(--navy);
+      border-radius:60% 60% 20% 20%;
+      bottom:72px;
+      right:52px;
     }
 
-    .lighthouse {
-      position: absolute;
-      right: 144px;
-      bottom: 142px;
-      width: 58px;
-      height: 150px;
-      background: var(--navy);
-      clip-path: polygon(32% 0, 68% 0, 86% 100%, 14% 100%);
+    .lighthouse{
+      position:absolute;
+      right:144px;
+      bottom:142px;
+      width:58px;
+      height:150px;
+      background:var(--navy);
+      clip-path:polygon(32% 0,68% 0,86% 100%,14% 100%);
     }
 
-    .light {
-      position: absolute;
-      right: 139px;
-      bottom: 272px;
-      width: 68px;
-      height: 34px;
-      background: var(--green);
-      border-radius: 8px 8px 2px 2px;
+    .light{
+      position:absolute;
+      right:139px;
+      bottom:272px;
+      width:68px;
+      height:34px;
+      background:var(--green);
+      border-radius:8px 8px 2px 2px;
     }
 
-    .boat {
-      position: absolute;
-      left: 92px;
-      bottom: 58px;
-      width: 140px;
-      height: 48px;
-      background: var(--green);
-      border-radius: 0 0 40px 40px;
+    .boat{
+      position:absolute;
+      left:92px;
+      bottom:58px;
+      width:140px;
+      height:48px;
+      background:var(--green);
+      border-radius:0 0 40px 40px;
     }
 
-    .boat:before {
-      content: "";
-      position: absolute;
-      width: 86px;
-      height: 44px;
-      background: white;
-      top: -38px;
-      left: 28px;
-      border-radius: 8px 8px 0 0;
+    .boat:before{
+      content:"";
+      position:absolute;
+      width:86px;
+      height:44px;
+      background:white;
+      top:-38px;
+      left:28px;
+      border-radius:8px 8px 0 0;
     }
 
-    .features {
-      padding: 78px 0;
-      background: white;
+    .features{
+      padding:78px 0;
+      background:white;
     }
 
-    .section-heading {
-      max-width: 760px;
-      margin: 0 auto 46px;
-      text-align: center;
+    .section-heading{
+      max-width:760px;
+      margin:0 auto 46px;
+      text-align:center;
     }
 
-    .section-heading h2 {
-      font-size: clamp(36px, 4vw, 54px);
-      line-height: 1.08;
-      margin: 0 0 16px;
-      color: var(--navy);
-      letter-spacing: -0.04em;
+    .section-heading h2{
+      font-size:clamp(36px,4vw,54px);
+      line-height:1.08;
+      margin:0 0 16px;
+      color:var(--navy);
+      letter-spacing:-.045em;
     }
 
-    .section-heading p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.65;
-      margin: 0;
+    .section-heading p{
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+      margin:0;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:18px;
     }
 
-    .feature {
-      border: 1px solid #e8edf1;
-      border-radius: 22px;
-      padding: 24px;
-      background: #fff;
-      text-align: center;
+    .feature{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      background:#fff;
+      text-align:center;
     }
 
-    .feature-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      margin: 0 auto 16px;
-      background: var(--sand);
-      color: var(--blue);
-      display: grid;
-      place-items: center;
-      font-size: 26px;
+    .feature-icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      margin:0 auto 16px;
+      background:var(--sand);
+      color:var(--blue);
+      display:grid;
+      place-items:center;
+      font-size:26px;
     }
 
-    .feature strong {
-      display: block;
-      color: var(--navy);
-      font-size: 17px;
-      margin-bottom: 8px;
+    .feature strong{
+      display:block;
+      color:var(--navy);
+      font-size:17px;
+      margin-bottom:8px;
     }
 
-    .feature span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
+    .feature span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
     }
 
-    .products {
-      padding: 84px 0;
-      background: var(--sand);
+    .products{
+      padding:84px 0;
+      background:var(--sand);
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
 
-    .product-card {
-      background: white;
-      border-radius: 26px;
-      padding: 30px;
-      border: 1px solid #eadfce;
-      box-shadow: 0 14px 30px rgba(37,55,70,.06);
+    .product-card{
+      background:white;
+      border-radius:28px;
+      padding:30px;
+      border:1px solid #eadfce;
+      box-shadow:0 14px 30px rgba(37,55,70,.06);
     }
 
-    .product-card h3 {
-      color: var(--navy);
-      font-size: 28px;
-      margin: 0 0 12px;
-      letter-spacing: -0.04em;
+    .pill{
+      display:inline-block;
+      background:#eef6f3;
+      color:var(--green);
+      padding:7px 12px;
+      border-radius:999px;
+      font-weight:850;
+      font-size:12px;
+      margin-bottom:16px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
     }
 
-    .product-card p {
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
+    .product-card h3{
+      color:var(--navy);
+      font-size:28px;
+      margin:0 0 12px;
+      letter-spacing:-.04em;
     }
 
-    .pill {
-      display: inline-block;
-      background: #eef6f3;
-      color: var(--green);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 12px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
+    .product-card p{
+      color:var(--muted);
+      line-height:1.65;
+      margin:0;
     }
 
-    .story {
-      padding: 90px 0;
-      background: var(--navy);
-      color: white;
+    .story{
+      padding:90px 0;
+      background:var(--navy);
+      color:white;
     }
 
-    .story-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 50px;
-      align-items: center;
+    .story-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:50px;
+      align-items:center;
     }
 
-    .story h2 {
-      font-size: clamp(36px, 4vw, 58px);
-      line-height: 1.08;
-      margin: 0;
-      letter-spacing: -0.05em;
+    .story h2{
+      font-size:clamp(36px,4vw,58px);
+      line-height:1.08;
+      margin:0;
+      letter-spacing:-.05em;
+      color:white;
     }
 
-    .story p {
-      color: #d8e0e6;
-      font-size: 18px;
-      line-height: 1.75;
-      margin: 0 0 18px;
+    .story p{
+      color:#d8e0e6;
+      font-size:18px;
+      line-height:1.75;
+      margin:0 0 18px;
     }
 
-    .cta {
-      padding: 84px 0;
-      background: white;
-      text-align: center;
+    .contact{
+      background:var(--sand);
+      padding:94px 0;
     }
 
-    .cta-box {
-      background: linear-gradient(135deg, var(--blue), #2f66d8);
-      color: white;
-      border-radius: 34px;
-      padding: 58px 28px;
-      box-shadow: 0 22px 50px rgba(79,125,243,.24);
+    .contact-header{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 44px;
     }
 
-    .cta-box h2 {
-      font-size: clamp(36px, 4vw, 58px);
-      margin: 0 0 14px;
-      letter-spacing: -0.05em;
+    .contact-header h2{
+      color:var(--navy);
+      font-size:clamp(38px,5vw,60px);
+      line-height:1.05;
+      margin:0 0 18px;
+      letter-spacing:-.05em;
     }
 
-    .cta-box p {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto 28px;
-      color: #eef4ff;
+    .contact-header p{
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.65;
+      margin:0;
     }
 
-    .cta-box .btn-primary {
-      background: white;
-      color: var(--blue);
-      box-shadow: none;
+    .contact-form{
+      max-width:860px;
+      margin:0 auto;
+      background:white;
+      border-radius:32px;
+      padding:46px;
+      box-shadow:0 22px 55px rgba(37,55,70,.08);
+      border:1px solid #eadfce;
     }
 
-    footer {
-      padding: 34px 0;
-      border-top: 1px solid #eef1f3;
-      color: var(--muted);
-      font-size: 14px;
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-bottom:22px;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
+    .field{
+      display:flex;
+      flex-direction:column;
     }
 
-    @media (max-width: 900px) {
+    .field label{
+      font-weight:750;
+      color:var(--navy);
+      margin-bottom:9px;
+      font-size:15px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select{
+      border:1px solid #e1e6ea;
+      border-radius:18px;
+      padding:16px 18px;
+      font-size:16px;
+      font-family:inherit;
+      background:white;
+      color:var(--text);
+      transition:.2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus{
+      outline:none;
+      border-color:var(--blue);
+      box-shadow:0 0 0 5px rgba(79,125,243,.12);
+    }
+
+    .field textarea{
+      min-height:170px;
+      resize:vertical;
+    }
+
+    .form-submit{
+      margin-top:22px;
+      background:var(--blue);
+      color:white;
+      border:none;
+      border-radius:999px;
+      padding:17px 32px;
+      font-size:17px;
+      font-weight:850;
+      cursor:pointer;
+      box-shadow:0 10px 22px rgba(79,125,243,.2);
+    }
+
+    .form-note{
+      color:var(--muted);
+      font-size:14px;
+      margin-top:18px;
+      line-height:1.5;
+    }
+
+    footer{
+      padding:34px 0;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+      background:white;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    @media(max-width:900px){
       .hero-grid,
       .story-grid,
       .product-grid,
-      .feature-grid {
-        grid-template-columns: 1fr;
+      .feature-grid,
+      .form-row{
+        grid-template-columns:1fr;
       }
 
-      .nav-links {
-        display: none;
-      }
+      .nav-links{display:none;}
 
-      .hero {
-        padding: 58px 0;
-      }
+      .hero{padding:58px 0;}
 
-      .hero-card {
-        padding: 18px;
-      }
+      .hero-card{padding:18px;}
 
-      .illustration {
-        height: 280px;
-      }
+      .illustration{height:280px;}
+
+      .contact-form{padding:30px;}
+
+      .feature-grid{gap:14px;}
     }
   </style>
 </head>
@@ -492,20 +558,19 @@
 <header>
   <div class="container nav">
     <a href="#" class="brand">
-      <span class="logo-icon">
-        <span class="logo-hill"></span>
-        <span class="logo-flag"></span>
-        <span class="logo-wave"></span>
+      <span class="harbor-logo-icon">
+        <span class="harbor-hill"></span>
+        <span class="harbor-flag"></span>
+        <span class="harbor-water"></span>
       </span>
-      harbor
+      <span class="harbor-wordmark">harbor</span>
     </a>
 
     <nav class="nav-links">
       <a href="#products">Products</a>
       <a href="#customers">Customers</a>
-      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
-      <a href="#demo" class="nav-cta">Book a Demo</a>
+      <a href="#contact" class="nav-cta">Contact Harbor</a>
     </nav>
   </div>
 </header>
@@ -514,13 +579,15 @@
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">Software built for industrial businesses</div>
+
       <h1>Run your business on Harbor.</h1>
+
       <p>
         Harbor brings customers, quotes, orders, assets, payments, and operations into one calm, connected place for industrial companies.
       </p>
 
       <div class="hero-actions">
-        <a href="#demo" class="btn-primary">Book a Demo</a>
+        <a href="#contact" class="btn-primary">Contact Harbor</a>
         <a href="#products" class="btn-secondary">See how it works →</a>
       </div>
     </div>
@@ -537,7 +604,7 @@
   </div>
 </section>
 
-<section class="features">
+<section class="features" id="customers">
   <div class="container">
     <div class="section-heading">
       <h2>Everything your industrial business needs, all in one place.</h2>
@@ -635,15 +702,86 @@
   </div>
 </section>
 
-<section class="cta" id="demo">
+<section class="contact" id="contact">
   <div class="container">
-    <div class="cta-box">
+    <div class="contact-header">
+      <div class="eyebrow">Let's talk</div>
       <h2>Ready to run on Harbor?</h2>
       <p>
-        Harbor is currently being developed with industrial distributors, manufacturers, and service companies in mind.
+        Tell us a little about your business and what you’re trying to improve.
       </p>
-      <a href="mailto:hello@runonharbor.com" class="btn-primary">Contact Harbor</a>
     </div>
+
+    <!--
+      To make this form email you:
+      1. Create a free Formspree form.
+      2. Replace the action URL below with your Formspree endpoint.
+    -->
+
+    <form class="contact-form" action="PASTE-YOUR-FORMSPREE-URL-HERE" method="POST">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="John Smith" required>
+        </div>
+
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" type="text" name="company" placeholder="ABC Equipment" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="john@company.com" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="text" name="phone" placeholder="(555) 555-5555">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="business-type">Business Type</label>
+          <select id="business-type" name="business_type">
+            <option value="">Select one</option>
+            <option>Industrial Distributor</option>
+            <option>Manufacturer</option>
+            <option>Parts Supplier</option>
+            <option>Service Company</option>
+            <option>Contractor / Fleet</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="interest">Main Interest</label>
+          <select id="interest" name="interest">
+            <option value="">Select one</option>
+            <option>Customer Portal</option>
+            <option>Quotes & Draft Orders</option>
+            <option>Asset Management</option>
+            <option>Supplier Automation</option>
+            <option>AI Tools</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">How can Harbor help?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your business, current workflow, and what you're trying to solve."></textarea>
+      </div>
+
+      <button class="form-submit" type="submit">Contact Harbor</button>
+
+      <p class="form-note">
+        This form is ready for Formspree. Replace the form action with your Formspree URL and submissions will be sent to your email.
+      </p>
+    </form>
   </div>
 </section>
 
