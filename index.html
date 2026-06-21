@@ -8,7 +8,7 @@
   <meta name="description" content="Harbor is modern software for industrial businesses. Manage customers, quotes, orders, assets, payments, and operations in one calm, connected place." />
 
   <style>
-    :root {
+    :root{
       --navy:#253746;
       --blue:#4F7DF3;
       --green:#5FBF8F;
@@ -60,29 +60,31 @@
       color:var(--navy);
     }
 
+    /* Logo Option 1 - Harbor Hill */
     .harbor-logo-icon{
-      width:52px;
-      height:42px;
+      width:58px;
+      height:46px;
       position:relative;
       display:inline-block;
+      flex:0 0 auto;
     }
 
     .harbor-hill{
       position:absolute;
-      left:3px;
-      bottom:13px;
-      width:44px;
-      height:24px;
+      left:4px;
+      bottom:15px;
+      width:48px;
+      height:25px;
       background:var(--navy);
       border-radius:60% 60% 35% 35%;
     }
 
     .harbor-flag{
       position:absolute;
-      left:31px;
-      top:3px;
+      left:35px;
+      top:2px;
       width:6px;
-      height:29px;
+      height:32px;
       background:var(--green);
       border-radius:8px;
     }
@@ -90,8 +92,8 @@
     .harbor-water{
       position:absolute;
       left:5px;
-      bottom:4px;
-      width:42px;
+      bottom:6px;
+      width:48px;
       height:5px;
       background:var(--blue);
       border-radius:999px;
@@ -101,8 +103,8 @@
       content:"";
       position:absolute;
       left:0;
-      top:8px;
-      width:42px;
+      top:9px;
+      width:48px;
       height:5px;
       background:var(--blue);
       border-radius:999px;
@@ -110,10 +112,11 @@
     }
 
     .harbor-wordmark{
-      font-size:30px;
+      font-size:32px;
       font-weight:800;
-      letter-spacing:-.05em;
+      letter-spacing:-.055em;
       color:var(--navy);
+      text-transform:lowercase;
     }
 
     .nav-links{
@@ -135,15 +138,15 @@
     }
 
     .hero{
-      padding:86px 0 72px;
+      padding:80px 0 70px;
       background:linear-gradient(180deg,#fff 0%,var(--sand) 100%);
       overflow:hidden;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:54px;
+      grid-template-columns:.9fr 1.1fr;
+      gap:52px;
       align-items:center;
     }
 
@@ -195,83 +198,19 @@
       display:inline-block;
     }
 
-    .hero-card{
+    .hero-art-card{
       background:white;
       border:1px solid var(--line);
       border-radius:30px;
-      padding:34px;
+      padding:14px;
       box-shadow:0 24px 60px rgba(37,55,70,.12);
     }
 
-    .illustration{
-      height:360px;
-      background:
-        radial-gradient(circle at 72% 18%,#dceeff 0 12%,transparent 13%),
-        linear-gradient(180deg,#f9fbff 0%,#eaf6ff 100%);
-      border-radius:24px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .water{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      height:120px;
-      background:repeating-linear-gradient(0deg,#cfe7ff 0 14px,#b9dcff 14px 24px);
-      opacity:.7;
-    }
-
-    .island{
-      position:absolute;
-      width:270px;
-      height:96px;
-      background:var(--navy);
-      border-radius:60% 60% 20% 20%;
-      bottom:72px;
-      right:52px;
-    }
-
-    .lighthouse{
-      position:absolute;
-      right:144px;
-      bottom:142px;
-      width:58px;
-      height:150px;
-      background:var(--navy);
-      clip-path:polygon(32% 0,68% 0,86% 100%,14% 100%);
-    }
-
-    .light{
-      position:absolute;
-      right:139px;
-      bottom:272px;
-      width:68px;
-      height:34px;
-      background:var(--green);
-      border-radius:8px 8px 2px 2px;
-    }
-
-    .boat{
-      position:absolute;
-      left:92px;
-      bottom:58px;
-      width:140px;
-      height:48px;
-      background:var(--green);
-      border-radius:0 0 40px 40px;
-    }
-
-    .boat:before{
-      content:"";
-      position:absolute;
-      width:86px;
-      height:44px;
-      background:white;
-      top:-38px;
-      left:28px;
-      border-radius:8px 8px 0 0;
+    .hero-art-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:22px;
     }
 
     .features{
@@ -540,11 +479,9 @@
 
       .nav-links{display:none;}
 
-      .hero{padding:58px 0;}
+      .hero{padding:54px 0;}
 
-      .hero-card{padding:18px;}
-
-      .illustration{height:280px;}
+      .hero-art-card{padding:10px;}
 
       .contact-form{padding:30px;}
 
@@ -592,14 +529,8 @@
       </div>
     </div>
 
-    <div class="hero-card">
-      <div class="illustration">
-        <div class="water"></div>
-        <div class="island"></div>
-        <div class="lighthouse"></div>
-        <div class="light"></div>
-        <div class="boat"></div>
-      </div>
+    <div class="hero-art-card">
+      <img src="harbor-illustrations.png" alt="Harbor software illustration for industrial businesses">
     </div>
   </div>
 </section>
@@ -711,12 +642,6 @@
         Tell us a little about your business and what you’re trying to improve.
       </p>
     </div>
-
-    <!--
-      To make this form email you:
-      1. Create a free Formspree form.
-      2. Replace the action URL below with your Formspree endpoint.
-    -->
 
     <form class="contact-form" action="PASTE-YOUR-FORMSPREE-URL-HERE" method="POST">
       <div class="form-row">
