@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Harbor | Software Built for Industrial Businesses</title>
-  <meta name="description" content="Harbor is modern software for industrial businesses. Manage customers, quotes, orders, assets, payments, and operations in one calm, connected place." />
+  <title>Anchor by Harbor | Operations Software for Industrial Businesses</title>
+  <meta name="description" content="Anchor by Harbor helps industrial businesses manage customers, quotes, orders, assets, and requests in one connected place." />
 
   <style>
     :root{
@@ -13,7 +13,6 @@
       --blue:#4F7DF3;
       --green:#5FBF8F;
       --sand:#F6F1E8;
-      --white:#FFFFFF;
       --text:#1f2933;
       --muted:#5f6b76;
       --line:#E8EDF1;
@@ -29,7 +28,7 @@
       background:#fff;
     }
 
-    a{color:inherit;text-decoration:none;}
+    a{text-decoration:none;color:inherit;}
 
     .container{
       max-width:1180px;
@@ -43,7 +42,7 @@
       position:sticky;
       top:0;
       z-index:10;
-      border-bottom:1px solid rgba(232,237,241,.75);
+      border-bottom:1px solid var(--line);
     }
 
     .nav{
@@ -74,21 +73,29 @@
       color:#fff;
       border-radius:999px;
       padding:14px 24px;
-      box-shadow:0 12px 25px rgba(79,125,243,.22);
       font-weight:800;
+      box-shadow:0 12px 25px rgba(79,125,243,.22);
     }
 
     .hero{
-      padding:74px 0 70px;
+      padding:76px 0 70px;
       background:#fff;
-      overflow:hidden;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
+      grid-template-columns:.95fr 1.05fr;
       gap:56px;
       align-items:center;
+    }
+
+    .eyebrow{
+      color:var(--green);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:13px;
+      margin:0 0 16px;
     }
 
     h1{
@@ -102,28 +109,26 @@
 
     .hero p{
       font-size:21px;
-      line-height:1.55;
+      line-height:1.6;
       color:var(--navy);
       margin:0 0 32px;
-      max-width:560px;
+      max-width:610px;
     }
 
     .hero-actions{
       display:flex;
+      gap:22px;
       align-items:center;
-      gap:24px;
       flex-wrap:wrap;
     }
 
     .btn-primary{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
       background:var(--blue);
       color:#fff;
       border-radius:999px;
       padding:16px 28px;
       font-weight:800;
+      display:inline-block;
       box-shadow:0 14px 28px rgba(79,125,243,.24);
     }
 
@@ -134,162 +139,190 @@
 
     .hero-illustration img{
       width:100%;
-      display:block;
       height:auto;
+      display:block;
     }
 
-    .capabilities{
-      padding:72px 0;
-      background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%);
+    .intro{
+      padding:66px 0;
+      background:linear-gradient(180deg,#fff 0%,var(--sand) 100%);
       border-top:1px solid #f2f1ee;
       border-bottom:1px solid #f2f1ee;
     }
 
-    .capabilities-header{
+    .intro-inner{
+      max-width:850px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .intro h2{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:clamp(36px,4vw,56px);
+      line-height:1.08;
+      margin:0 0 18px;
+      letter-spacing:-.04em;
+    }
+
+    .intro p{
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .anchor-section{
+      padding:70px 0;
+      background:#fff;
+    }
+
+    .anchor-panel{
+      border-radius:26px;
+      padding:44px 52px;
+      background:linear-gradient(90deg,#F3F8FF 0%,#FFFFFF 100%);
+      border:1px solid var(--line);
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:44px;
+      align-items:center;
+    }
+
+    .anchor-panel h2{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:clamp(34px,4vw,52px);
+      line-height:1.08;
+      margin:0 0 18px;
+      letter-spacing:-.04em;
+    }
+
+    .anchor-panel p{
+      color:var(--text);
+      font-size:17px;
+      line-height:1.7;
+      margin:0 0 22px;
+    }
+
+    .anchor-list{
+      display:grid;
+      gap:12px;
+      margin:24px 0 0;
+      padding:0;
+      list-style:none;
+    }
+
+    .anchor-list li{
+      display:flex;
+      gap:12px;
+      color:var(--navy);
+      font-weight:650;
+      line-height:1.45;
+    }
+
+    .check{
+      width:24px;
+      height:24px;
+      border-radius:999px;
+      background:#EAF7F1;
+      color:var(--green);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 24px;
+      font-weight:900;
+    }
+
+    .anchor-art img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .who{
+      padding:74px 0;
+      background:#fff;
+    }
+
+    .section-header{
       text-align:center;
       max-width:780px;
       margin:0 auto 42px;
     }
 
-    .capabilities-header h2{
+    .section-header h2{
       font-family:Georgia,"Times New Roman",serif;
       color:var(--navy);
       font-size:clamp(36px,4vw,54px);
       line-height:1.08;
+      margin:0 0 16px;
       letter-spacing:-.04em;
-      margin:0 0 14px;
     }
 
-    .capabilities-header p{
+    .section-header p{
       color:var(--muted);
-      font-size:19px;
-      line-height:1.6;
+      font-size:18px;
+      line-height:1.65;
       margin:0;
     }
 
-    .capabilities-grid{
+    .who-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      gap:20px;
     }
 
-    .capability-card{
+    .who-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:24px;
-      padding:28px;
+      padding:30px;
       box-shadow:0 12px 30px rgba(37,55,70,.05);
     }
 
-    .capability-card.wide{
-      grid-column:span 2;
-    }
-
-    .capability-icon{
-      width:52px;
-      height:52px;
-      border-radius:16px;
-      background:#F3F8FF;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:18px;
-      color:var(--blue);
-    }
-
-    .capability-icon svg{
-      width:28px;
-      height:28px;
-      stroke:currentColor;
-      stroke-width:1.8;
-      fill:none;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-
-    .capability-card h3{
+    .who-card h3{
       color:var(--navy);
-      font-size:22px;
-      margin:0 0 10px;
+      font-size:24px;
+      margin:0 0 12px;
       letter-spacing:-.02em;
     }
 
-    .capability-card p{
+    .who-card p{
       color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
+      line-height:1.65;
       margin:0;
     }
 
-    .products{
-      padding:48px 0 28px;
-      background:#fff;
+    .why{
+      padding:82px 0;
+      background:var(--navy);
+      color:white;
     }
 
-    .product-panel{
-      border-radius:22px;
-      padding:36px 48px;
-      margin-bottom:12px;
-      overflow:hidden;
+    .why-grid{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:36px;
+      gap:52px;
       align-items:center;
-      border:1px solid rgba(232,237,241,.75);
     }
 
-    .product-panel.anchor{
-      background:linear-gradient(90deg,#F3F8FF 0%,#FFFFFF 100%);
-    }
-
-    .product-panel.beacon{
-      background:linear-gradient(90deg,#FFFFFF 0%,#FFF9EE 100%);
-      grid-template-columns:1.05fr .95fr;
-    }
-
-    .product-panel.forge{
-      background:linear-gradient(90deg,#F8FBFF 0%,#FFFFFF 100%);
-    }
-
-    .product-eyebrow{
-      color:var(--green);
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:13px;
-      margin:0 0 12px;
-    }
-
-    .product-panel h2{
+    .why h2{
       font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
-      font-size:clamp(34px,4vw,48px);
-      line-height:1.05;
-      letter-spacing:-.035em;
+      font-size:clamp(36px,4vw,58px);
+      line-height:1.08;
+      margin:0;
+      letter-spacing:-.04em;
+    }
+
+    .why p{
+      color:#d8e0e6;
+      font-size:18px;
+      line-height:1.75;
       margin:0 0 18px;
-    }
-
-    .product-panel p{
-      color:var(--text);
-      font-size:17px;
-      line-height:1.65;
-      margin:0 0 18px;
-      max-width:500px;
-    }
-
-    .product-link{
-      color:var(--blue);
-      font-weight:850;
-    }
-
-    .product-art img{
-      width:100%;
-      display:block;
-      height:auto;
     }
 
     .contact{
-      padding:40px 0 58px;
+      padding:58px 0;
       background:#fff;
     }
 
@@ -297,23 +330,22 @@
       background:linear-gradient(90deg,#FFF9EE 0%,#FFFFFF 100%);
       border:1px solid #EADFCC;
       border-radius:24px;
-      padding:34px 30px;
+      padding:38px 32px;
       text-align:center;
     }
 
     .contact-box h2{
       font-family:Georgia,"Times New Roman",serif;
       color:var(--navy);
-      font-size:42px;
-      line-height:1.1;
-      letter-spacing:-.035em;
+      font-size:44px;
       margin:0 0 8px;
+      letter-spacing:-.035em;
     }
 
     .contact-box p{
       color:var(--muted);
-      margin:0 0 24px;
-      font-size:15px;
+      margin:0 0 26px;
+      font-size:16px;
     }
 
     .contact-form{
@@ -321,7 +353,6 @@
       grid-template-columns:1fr 1fr 1.1fr 1.1fr;
       gap:14px;
       align-items:center;
-      margin-bottom:14px;
     }
 
     .contact-form input,
@@ -334,7 +365,6 @@
       font-family:inherit;
       font-size:14px;
       background:#fff;
-      color:var(--text);
     }
 
     .contact-form textarea{
@@ -358,12 +388,11 @@
     .form-note{
       color:var(--muted);
       font-size:13px;
-      margin:10px 0 0;
+      margin:14px 0 0;
     }
 
     footer{
       border-top:1px solid var(--line);
-      background:#fff;
       padding:28px 0;
       color:var(--muted);
       font-size:14px;
@@ -383,37 +412,29 @@
       display:block;
     }
 
-    .footer-links{
-      display:flex;
-      gap:28px;
-      color:var(--navy);
-      font-weight:650;
-    }
-
     @media(max-width:900px){
       .nav-links{display:none;}
 
-      .hero{padding:48px 0 46px;}
-
       .hero-grid,
-      .product-panel,
-      .product-panel.beacon{
+      .anchor-panel,
+      .why-grid,
+      .who-grid{
         grid-template-columns:1fr;
       }
 
-      .capabilities-grid{
+      .hero{padding:50px 0;}
+
+      .anchor-panel{
+        padding:30px;
+      }
+
+      .contact-form{
         grid-template-columns:1fr;
       }
 
-      .capability-card.wide{
+      .contact-form textarea{
         grid-column:auto;
       }
-
-      .product-panel{padding:28px;}
-
-      .contact-form{grid-template-columns:1fr;}
-
-      .contact-form textarea{grid-column:auto;}
 
       .footer-inner{
         align-items:flex-start;
@@ -432,11 +453,9 @@
     </a>
 
     <nav class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#customers">Customers</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#signin">Sign in</a>
+      <a href="#anchor">Anchor</a>
+      <a href="#who">Who It’s For</a>
+      <a href="#why">Why Harbor</a>
       <a href="#contact" class="nav-cta">Book a Demo</a>
     </nav>
   </div>
@@ -446,13 +465,16 @@
 
   <section class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy">
-        <h1>Run your business on Harbor.</h1>
-        <p>Everything your industrial business needs, all in one place.</p>
+      <div>
+        <p class="eyebrow">Anchor by Harbor</p>
+        <h1>Run your industrial business from one calm place.</h1>
+        <p>
+          Anchor helps distributors, manufacturers, and service companies manage customers, quotes, orders, assets, and requests without relying on scattered emails and spreadsheets.
+        </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Book a Demo</a>
-          <a href="#products" class="btn-link">See how it works →</a>
+          <a href="#anchor" class="btn-link">See how Anchor works →</a>
         </div>
       </div>
 
@@ -462,101 +484,85 @@
     </div>
   </section>
 
-  <section class="capabilities" id="customers">
+  <section class="intro">
     <div class="container">
-      <div class="capabilities-header">
-        <h2>Everything works better when it works together.</h2>
-        <p>Harbor connects the everyday pieces of an industrial business into one calm, organized system.</p>
-      </div>
-
-      <div class="capabilities-grid">
-
-        <div class="capability-card">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z"/><path d="M8 11c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3z"/><path d="M2.5 19c.8-3 2.9-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/><path d="M10.5 19c.7-2.5 2.5-4.2 5.5-4.2 2.7 0 4.6 1.5 5.5 4.2"/></svg>
-          </div>
-          <h3>Customers</h3>
-          <p>Give every customer a clean place to view requests, quotes, assets, orders, and history.</p>
-        </div>
-
-        <div class="capability-card wide">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v6h5"/><path d="M10 13h6"/><path d="M10 17h6"/></svg>
-          </div>
-          <h3>Quotes that carry the details</h3>
-          <p>Add lead times, product notes, approvals, and customer-facing information without exposing internal supplier costs or margin details.</p>
-        </div>
-
-        <div class="capability-card wide">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
-          </div>
-          <h3>Orders, tracking, and fulfillment</h3>
-          <p>Keep customers updated as quotes turn into orders, shipments move, and tracking information becomes available.</p>
-        </div>
-
-        <div class="capability-card">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.5 2.5-2.5-2.5z"/></svg>
-          </div>
-          <h3>Assets</h3>
-          <p>Connect parts, service history, manuals, and recommendations to the equipment your customers already own.</p>
-        </div>
-
-        <div class="capability-card">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>
-          </div>
-          <h3>Payments</h3>
-          <p>Collect customer payments and support supplier payout workflows as Harbor grows.</p>
-        </div>
-
+      <div class="intro-inner">
+        <h2>Built for the work that doesn’t fit inside a normal shopping cart.</h2>
+        <p>
+          Industrial businesses quote hard-to-find parts, manage supplier lead times, track customer assets, send updates, and keep internal costs private. Anchor is being built for that reality.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="products" id="products">
+  <section class="anchor-section" id="anchor">
     <div class="container">
-
-      <article class="product-panel anchor">
+      <div class="anchor-panel">
         <div>
-          <p class="product-eyebrow">Anchor</p>
+          <p class="eyebrow">Anchor</p>
           <h2>The operating system for industrial businesses.</h2>
-          <p>Manage customers, quotes, orders, assets, tracking, payments, and operations in one connected platform built for the way you work.</p>
-          <a href="#contact" class="product-link">Learn more about Anchor →</a>
+          <p>
+            Anchor connects the customer-facing side of your business with the internal workflows your team uses to quote, fulfill, and support every order.
+          </p>
+
+          <ul class="anchor-list">
+            <li><span class="check">✓</span> Customer portals for requests, quotes, orders, and assets.</li>
+            <li><span class="check">✓</span> Quote workflows with lead times and customer-facing notes.</li>
+            <li><span class="check">✓</span> Internal supplier, cost, margin, and fulfillment tools.</li>
+            <li><span class="check">✓</span> Asset records tied to service history, manuals, and recommended parts.</li>
+          </ul>
         </div>
 
-        <div class="product-art">
+        <div class="anchor-art">
           <img src="harbor-anchor-dashboard.png" alt="Anchor dashboard illustration">
         </div>
-      </article>
+      </div>
+    </div>
+  </section>
 
-      <article class="product-panel beacon">
-        <div class="product-art">
-          <img src="harbor-beacon-lighthouse.png" alt="Beacon AI lighthouse illustration">
+  <section class="who" id="who">
+    <div class="container">
+      <div class="section-header">
+        <h2>Made for industrial teams.</h2>
+        <p>
+          Anchor is for businesses where quoting, sourcing, fulfillment, and customer communication need more structure.
+        </p>
+      </div>
+
+      <div class="who-grid">
+        <div class="who-card">
+          <h3>Distributors</h3>
+          <p>Manage quote requests, supplier costs, lead times, margins, and customer order history in one place.</p>
         </div>
 
-        <div>
-          <p class="product-eyebrow">Beacon</p>
-          <h2>AI intelligence for your team.</h2>
-          <p>Beacon uses your data to surface insights, recommend actions, and help your team work smarter and faster.</p>
-          <a href="#contact" class="product-link">Learn more about Beacon →</a>
-        </div>
-      </article>
-
-      <article class="product-panel forge">
-        <div>
-          <p class="product-eyebrow">Forge</p>
-          <h2>Production and manufacturing workflows.</h2>
-          <p>Plan jobs, track production, manage suppliers, and keep everything moving from the shop floor to delivery.</p>
-          <a href="#contact" class="product-link">Learn more about Forge →</a>
+        <div class="who-card">
+          <h3>Manufacturers</h3>
+          <p>Give customers a clearer way to request products, review quotes, track orders, and access documentation.</p>
         </div>
 
-        <div class="product-art">
-          <img src="harbor-forge-manufacturing.png" alt="Forge manufacturing illustration">
+        <div class="who-card">
+          <h3>Service Companies</h3>
+          <p>Track customer assets, parts requests, service history, manuals, and recommended maintenance items.</p>
         </div>
-      </article>
+      </div>
+    </div>
+  </section>
 
+  <section class="why" id="why">
+    <div class="container why-grid">
+      <div>
+        <p class="eyebrow">Why Harbor</p>
+        <h2>Built from real industrial operations.</h2>
+      </div>
+
+      <div>
+        <p>
+          Harbor is being built from the ground up around real distributor and contractor workflows: parts requests, draft orders, supplier costs, customer portals, quotes, lead times, tracking, and asset records.
+        </p>
+        <p>
+          The goal is simple: give industrial teams a system that feels calm, organized, and practical — not bloated enterprise software.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -592,7 +598,7 @@
             <option>Not Sure Yet</option>
           </select>
 
-          <textarea name="message" placeholder="How can Harbor help?"></textarea>
+          <textarea name="message" placeholder="How can Anchor help?"></textarea>
 
           <button type="submit">Send Message</button>
         </form>
@@ -611,13 +617,6 @@
     </a>
 
     <span>© 2026 Harbor. All rights reserved.</span>
-
-    <div class="footer-links">
-      <a href="#products">Products</a>
-      <a href="#customers">Customers</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-    </div>
   </div>
 </footer>
 
