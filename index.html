@@ -140,7 +140,8 @@
       font-weight:800;
     }
 
-    .hero-illustration img{
+    .hero-illustration img,
+    .anchor-art img{
       width:100%;
       height:auto;
       display:block;
@@ -227,12 +228,6 @@
       justify-content:center;
       flex:0 0 24px;
       font-weight:900;
-    }
-
-    .anchor-art img{
-      width:100%;
-      height:auto;
-      display:block;
     }
 
     .who{
@@ -429,7 +424,6 @@
       }
 
       .hero{padding:50px 0;}
-
       .anchor-panel{padding:30px;}
 
       .footer-inner{
@@ -439,13 +433,9 @@
     }
 
     @media(max-width:768px){
-      .name-row{
-        grid-template-columns:1fr;
-      }
+      .name-row{grid-template-columns:1fr;}
 
-      .contact-box{
-        padding:34px 22px;
-      }
+      .contact-box{padding:34px 22px;}
     }
   </style>
 </head>
@@ -591,7 +581,8 @@
           </div>
 
           <input type="text" name="company" placeholder="Company" required>
-          <input type="email" name="email" placeholder="Work email" required>
+          <input type="url" name="website" placeholder="Website URL (optional)">
+          <input type="email" name="email" placeholder="Business email" required>
           <input type="text" name="phone" placeholder="Phone number">
 
           <select name="business_type">
@@ -604,13 +595,22 @@
             <option>Other</option>
           </select>
 
+          <select name="company_size">
+            <option value="">Company size</option>
+            <option>1-10 employees</option>
+            <option>11-50 employees</option>
+            <option>51-250 employees</option>
+            <option>250+ employees</option>
+          </select>
+
           <select name="interest">
-            <option value="">Main interest</option>
+            <option value="">What are you most interested in?</option>
             <option>Customer Portal</option>
-            <option>Quotes & Draft Orders</option>
+            <option>Quote Management</option>
             <option>Asset Management</option>
-            <option>Supplier Automation</option>
-            <option>AI Tools</option>
+            <option>Order Tracking</option>
+            <option>Supplier Workflows</option>
+            <option>Internal Operations</option>
             <option>Not Sure Yet</option>
           </select>
 
