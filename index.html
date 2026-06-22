@@ -600,7 +600,7 @@
   method="POST"
   onsubmit="setRedirect()">
 
-  <input type="hidden" id="next" name="_next">
+  <input type="hidden" id="redirect" name="_redirect">
           <div class="name-row">
 
   <input
@@ -665,14 +665,15 @@
 </footer>
 <script>
 function setRedirect() {
+  const firstName = encodeURIComponent(
+    document.querySelector('[name="first_name"]').value
+  );
 
-  const firstName =
-    encodeURIComponent(document.querySelector('[name="first_name"]').value);
+  const company = encodeURIComponent(
+    document.querySelector('[name="company"]').value
+  );
 
-  const company =
-    encodeURIComponent(document.querySelector('[name="company"]').value);
-
-  document.getElementById("next").value =
+  document.getElementById("redirect").value =
     `https://runonharbor.com/thank-you.html?first=${firstName}&company=${company}`;
 }
 </script>
