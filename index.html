@@ -77,6 +77,21 @@
       box-shadow:0 12px 25px rgba(79,125,243,.22);
     }
 
+    .eyebrow{
+      color:var(--green);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:13px;
+      margin:0 0 16px;
+    }
+
+    h1,h2{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      letter-spacing:-.045em;
+    }
+
     .hero{
       padding:76px 0 70px;
       background:#fff;
@@ -89,21 +104,9 @@
       align-items:center;
     }
 
-    .eyebrow{
-      color:var(--green);
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.1em;
-      font-size:13px;
-      margin:0 0 16px;
-    }
-
     h1{
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
       font-size:clamp(48px,6vw,76px);
       line-height:1.03;
-      letter-spacing:-.045em;
       margin:0 0 24px;
     }
 
@@ -157,12 +160,9 @@
     }
 
     .intro h2{
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
       font-size:clamp(36px,4vw,56px);
       line-height:1.08;
       margin:0 0 18px;
-      letter-spacing:-.04em;
     }
 
     .intro p{
@@ -189,16 +189,12 @@
     }
 
     .anchor-panel h2{
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
       font-size:clamp(34px,4vw,52px);
       line-height:1.08;
       margin:0 0 18px;
-      letter-spacing:-.04em;
     }
 
     .anchor-panel p{
-      color:var(--text);
       font-size:17px;
       line-height:1.7;
       margin:0 0 22px;
@@ -251,12 +247,9 @@
     }
 
     .section-header h2{
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
       font-size:clamp(36px,4vw,54px);
       line-height:1.08;
       margin:0 0 16px;
-      letter-spacing:-.04em;
     }
 
     .section-header p{
@@ -307,11 +300,10 @@
     }
 
     .why h2{
-      font-family:Georgia,"Times New Roman",serif;
+      color:white;
       font-size:clamp(36px,4vw,58px);
       line-height:1.08;
       margin:0;
-      letter-spacing:-.04em;
     }
 
     .why p{
@@ -330,83 +322,75 @@
       background:linear-gradient(90deg,#FFF9EE 0%,#FFFFFF 100%);
       border:1px solid #EADFCC;
       border-radius:24px;
-      padding:38px 32px;
+      padding:42px 32px;
       text-align:center;
     }
 
     .contact-box h2{
-      font-family:Georgia,"Times New Roman",serif;
-      color:var(--navy);
       font-size:44px;
       margin:0 0 8px;
-      letter-spacing:-.035em;
     }
 
     .contact-box p{
       color:var(--muted);
-      margin:0 0 26px;
+      margin:0 0 28px;
       font-size:16px;
     }
 
- .contact-form{
-  max-width:700px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
+    .contact-form{
+      max-width:700px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
 
-.name-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
+    .name-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  width:100%;
-  border:1px solid #D9E0E6;
-  border-radius:10px;
-  padding:16px 18px;
-  font-family:inherit;
-  font-size:15px;
-  background:white;
-  color:#1f2933;
-  transition:.2s ease;
-}
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea{
+      width:100%;
+      border:1px solid #D9E0E6;
+      border-radius:10px;
+      padding:16px 18px;
+      font-family:inherit;
+      font-size:15px;
+      background:white;
+      color:var(--text);
+      transition:.2s ease;
+    }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus{
-  outline:none;
-  border-color:#4F7DF3;
-  box-shadow:0 0 0 4px rgba(79,125,243,.12);
-}
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus{
+      outline:none;
+      border-color:var(--blue);
+      box-shadow:0 0 0 4px rgba(79,125,243,.12);
+    }
 
-.contact-form textarea{
-  min-height:160px;
-  resize:vertical;
-}
+    .contact-form textarea{
+      min-height:160px;
+      resize:vertical;
+    }
 
-.contact-form button{
-  margin-top:8px;
-  border:none;
-  background:#4F7DF3;
-  color:white;
-  border-radius:999px;
-  padding:18px 28px;
-  font-weight:800;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow:0 12px 24px rgba(79,125,243,.22);
-}
+    .contact-form button{
+      margin-top:8px;
+      border:none;
+      background:var(--blue);
+      color:white;
+      border-radius:999px;
+      padding:18px 28px;
+      font-weight:800;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow:0 12px 24px rgba(79,125,243,.22);
+    }
 
-@media(max-width:768px){
-  .name-row{
-    grid-template-columns:1fr;
-  }
-}
     .form-note{
       color:var(--muted);
       font-size:13px;
@@ -446,21 +430,21 @@
 
       .hero{padding:50px 0;}
 
-      .anchor-panel{
-        padding:30px;
-      }
-
-      .contact-form{
-        grid-template-columns:1fr;
-      }
-
-      .contact-form textarea{
-        grid-column:auto;
-      }
+      .anchor-panel{padding:30px;}
 
       .footer-inner{
         align-items:flex-start;
         flex-direction:column;
+      }
+    }
+
+    @media(max-width:768px){
+      .name-row{
+        grid-template-columns:1fr;
+      }
+
+      .contact-box{
+        padding:34px 22px;
       }
     }
   </style>
@@ -594,27 +578,18 @@
         <h2>Let’s talk.</h2>
         <p>Tell us a little about your business and what you’re trying to improve.</p>
 
-       <form id="contact-form"
-      class="contact-form"
-      action="https://formspree.io/f/xdarogbw"
-      method="POST">
-  onsubmit="setRedirect()">
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="https://formspree.io/f/xdarogbw"
+          method="POST"
+        >
 
- 
-  <input
-      type="text"
-      name="first_name"
-      placeholder="First name"
-      required>
+          <div class="name-row">
+            <input type="text" name="first_name" placeholder="First name" required>
+            <input type="text" name="last_name" placeholder="Last name" required>
+          </div>
 
-  <input
-      type="text"
-      name="last_name"
-      placeholder="Last name"
-      required>
-
-</div>
-          
           <input type="text" name="company" placeholder="Company" required>
           <input type="email" name="email" placeholder="Work email" required>
           <input type="text" name="phone" placeholder="Phone number">
@@ -641,11 +616,10 @@
 
           <textarea name="message" placeholder="How can Anchor help?"></textarea>
 
-          <button type="submit">Send Message</button>
-          
+          <button type="submit">Request a Demo</button>
         </form>
 
-       
+        <p class="form-note">Your request will be sent directly to Harbor.</p>
       </div>
     </div>
   </section>
@@ -661,22 +635,17 @@
     <span>© 2026 Harbor. All rights reserved.</span>
   </div>
 </footer>
-```html
-<script>
 
+<script>
 const form = document.getElementById("contact-form");
 
 form.addEventListener("submit", async function(e){
-
   e.preventDefault();
 
   const formData = new FormData(form);
 
-  const first =
-    encodeURIComponent(formData.get("first_name"));
-
-  const company =
-    encodeURIComponent(formData.get("company"));
+  const first = encodeURIComponent(formData.get("first_name"));
+  const company = encodeURIComponent(formData.get("company"));
 
   const response = await fetch(form.action,{
     method:"POST",
@@ -687,20 +656,12 @@ form.addEventListener("submit", async function(e){
   });
 
   if(response.ok){
-
-    window.location.href =
-      `/thank-you.html?first=${first}&company=${company}`;
-
+    window.location.href = `/thank-you.html?first=${first}&company=${company}`;
   } else {
-
     alert("Something went wrong. Please try again.");
-
   }
-
 });
-
 </script>
-```
 
 </body>
 </html>
