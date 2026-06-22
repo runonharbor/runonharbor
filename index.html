@@ -595,8 +595,21 @@
         <p>Tell us a little about your business and what you’re trying to improve.</p>
 
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="setRedirect()">
-          <input type="text" name="first_name" placeholder="First name" required>
-          <input type="text" name="last_name" placeholder="Last name" required>
+          <div class="name-row">
+
+  <input
+      type="text"
+      name="first_name"
+      placeholder="First name"
+      required>
+
+  <input
+      type="text"
+      name="last_name"
+      placeholder="Last name"
+      required>
+
+</div>
           <input type="text" name="company" placeholder="Company" required>
           <input type="text" name="company" placeholder="Company" required>
           <input type="email" name="email" placeholder="Work email" required>
