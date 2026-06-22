@@ -603,6 +603,7 @@
           <textarea name="message" placeholder="How can Anchor help?"></textarea>
 
           <button type="submit">Send Message</button>
+          <input type="hidden" id="next" name="_next">
         </form>
 
         <p class="form-note">Replace the form action with your Formspree URL to receive submissions by email.</p>
@@ -621,6 +622,18 @@
     <span>© 2026 Harbor. All rights reserved.</span>
   </div>
 </footer>
+<script>
+function setRedirect() {
 
+  const firstName =
+    encodeURIComponent(document.querySelector('[name="first_name"]').value);
+
+  const company =
+    encodeURIComponent(document.querySelector('[name="company"]').value);
+
+  document.getElementById("next").value =
+    `https://runonharbor.com/thank-you.html?first=${firstName}&company=${company}`;
+}
+</script>
 </body>
 </html>
