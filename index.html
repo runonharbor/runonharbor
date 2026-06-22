@@ -594,15 +594,13 @@
         <h2>Let’s talk.</h2>
         <p>Tell us a little about your business and what you’re trying to improve.</p>
 
-        <form
-  class="contact-form"
-  action="https://formspree.io/f/xdarogbw"
-  method="POST"
+       <form id="contact-form"
+      class="contact-form"
+      action="https://formspree.io/f/xdarogbw"
+      method="POST">
   onsubmit="setRedirect()">
 
-  <input type="hidden" id="redirect" name="_redirect">
-          <div class="name-row">
-
+ 
   <input
       type="text"
       name="first_name"
@@ -644,7 +642,7 @@
           <textarea name="message" placeholder="How can Anchor help?"></textarea>
 
           <button type="submit">Send Message</button>
-          <input type="hidden" id="next" name="_next">
+          
         </form>
 
        
@@ -663,19 +661,46 @@
     <span>© 2026 Harbor. All rights reserved.</span>
   </div>
 </footer>
+```html
 <script>
-function setRedirect() {
-  const firstName = encodeURIComponent(
-    document.querySelector('[name="first_name"]').value
-  );
 
-  const company = encodeURIComponent(
-    document.querySelector('[name="company"]').value
-  );
+const form = document.getElementById("contact-form");
 
-  document.getElementById("redirect").value =
-    `https://runonharbor.com/thank-you.html?first=${firstName}&company=${company}`;
-}
+form.addEventListener("submit", async function(e){
+
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const first =
+    encodeURIComponent(formData.get("first_name"));
+
+  const company =
+    encodeURIComponent(formData.get("company"));
+
+  const response = await fetch(form.action,{
+    method:"POST",
+    body:formData,
+    headers:{
+      Accept:"application/json"
+    }
+  });
+
+  if(response.ok){
+
+    window.location.href =
+      `/thank-you.html?first=${first}&company=${company}`;
+
+  } else {
+
+    alert("Something went wrong. Please try again.");
+
+  }
+
+});
+
 </script>
+```
+
 </body>
 </html>
