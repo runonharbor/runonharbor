@@ -603,25 +603,37 @@
         </div>
 
         <!-- Replace the action URL below with your current form endpoint from runonharbor.com -->
-        <form class="form-card" action="" method="POST">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
+        <form class="form-card" action="https://formspree.io/f/xdarogbw" method="POST">
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
+  <input type="hidden" name="_subject" value="New Harbor Early Access Request">
+  <input type="hidden" name="_next" value="https://runonharbor.com/thank-you.html">
 
-          <label for="company">Company</label>
-          <input id="company" name="company" type="text" autocomplete="organization">
+  <!-- Honeypot spam protection -->
+  <input type="text" name="_gotcha" style="display:none">
 
-          <label for="message">What are you trying to organize?</label>
-          <textarea id="message" name="message" placeholder="Customer requests, supplier pricing, quotes, follow-ups, equipment records..."></textarea>
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" autocomplete="name" required>
 
-          <button type="submit">Request Early Access</button>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" autocomplete="email" required>
 
-          <p class="small-note">
-            Note: paste your existing form action endpoint into this form before uploading to GitHub Pages.
-          </p>
-        </form>
+  <label for="company">Company</label>
+  <input id="company" name="company" type="text" autocomplete="organization">
+
+  <label for="message">What are you trying to organize?</label>
+  <textarea
+    id="message"
+    name="message"
+    placeholder="Customer requests, supplier pricing, quotes, follow-ups, equipment records..."
+  ></textarea>
+
+  <button type="submit">Request Early Access</button>
+
+  <p class="small-note">
+    We'll review your request and follow up personally.
+  </p>
+
+</form>
       </div>
     </section>
   </main>
