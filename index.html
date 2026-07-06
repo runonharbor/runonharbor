@@ -602,38 +602,71 @@
           </p>
         </div>
 
-        <!-- Replace the action URL below with your current form endpoint from runonharbor.com -->
-        <form class="form-card" action="https://formspree.io/f/xdarogbw" method="POST">
-
-  <input type="hidden" name="_subject" value="New Harbor Early Access Request">
-  <input type="hidden" name="_next" value="https://runonharbor.com/thank-you.html">
-
-  <!-- Honeypot spam protection -->
-  <input type="text" name="_gotcha" style="display:none">
-
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text" autocomplete="name" required>
-
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" autocomplete="email" required>
-
-  <label for="company">Company</label>
-  <input id="company" name="company" type="text" autocomplete="organization">
-
-  <label for="message">What are you trying to organize?</label>
-  <textarea
-    id="message"
-    name="message"
-    placeholder="Customer requests, supplier pricing, quotes, follow-ups, equipment records..."
-  ></textarea>
-
-  <button type="submit">Request Early Access</button>
-
-  <p class="small-note">
-    We'll review your request and follow up personally.
-  </p>
-
-</form>
+        <!--
+          FORM SETUP NOTE:
+          This form matches the fields currently shown on runonharbor.com.
+          If your existing site already has a working form endpoint, paste that endpoint into action="" below.
+          GitHub Pages does not process forms by itself, so use your current form service, Formspree, Basin, Netlify Forms, HubSpot, etc.
+        -->
+        <form class="form-card" action="" method="POST">
+          <div class="form-grid">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" autocomplete="organization" />
+            </div>
+            <div>
+              <label for="business_type">Business type</label>
+              <select id="business_type" name="business_type" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Industrial Distributor</option>
+                <option>Manufacturer</option>
+                <option>Parts Supplier</option>
+                <option>Service Company</option>
+                <option>Contractor / Fleet</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="company_size">Company size</label>
+              <select id="company_size" name="company_size">
+                <option value="" selected disabled>Select one</option>
+                <option>1-10 employees</option>
+                <option>11-50 employees</option>
+                <option>51-250 employees</option>
+                <option>250+ employees</option>
+              </select>
+            </div>
+            <div>
+              <label for="interest">What are you most interested in?</label>
+              <select id="interest" name="interest" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Customer Portal</option>
+                <option>Quote Management</option>
+                <option>Asset Management</option>
+                <option>Order Tracking</option>
+                <option>Supplier Workflows</option>
+                <option>Internal Operations</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="full">
+              <label for="message">What are you trying to improve?</label>
+              <textarea id="message" name="message" placeholder="Example: We’re tracking quotes in email and spreadsheets and need a better way to manage follow-up."></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Request a Demo</button>
+            <span class="form-note">We’ll review your note and follow up directly.</span>
+          </div>
+        </form>
       </div>
     </section>
   </main>
