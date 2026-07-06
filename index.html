@@ -16,7 +16,6 @@
       --navy-2:#1F3A5F;
       --blue:#4D8DFF;
       --blue-light:#EAF3FF;
-      --green:#1FB980;
       --bg:#FAFBFC;
       --text:#1B1F23;
       --muted:#5B6675;
@@ -369,6 +368,16 @@
       background:#fff;
     }
 
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .form-grid .full{
+      grid-column:1 / -1;
+    }
+
     .form-card label{
       display:block;
       color:var(--navy);
@@ -378,26 +387,60 @@
     }
 
     .form-card input,
+    .form-card select,
     .form-card textarea{
       width:100%;
+      height:48px;
       border:1px solid #BFC9D4;
       border-radius:2px;
-      padding:13px 12px;
-      font:inherit;
+      padding:12px 12px;
+      font-family:inherit;
       font-size:16px;
-      margin-bottom:16px;
+      font-weight:400;
+      line-height:1.3;
       background:#fff;
       color:var(--text);
+      margin:0;
+      outline:none;
+      appearance:none;
+    }
+
+    .form-card select{
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--navy) 50%),
+        linear-gradient(135deg, var(--navy) 50%, transparent 50%);
+      background-position:
+        calc(100% - 18px) 20px,
+        calc(100% - 13px) 20px;
+      background-size:5px 5px, 5px 5px;
+      background-repeat:no-repeat;
+      padding-right:36px;
     }
 
     .form-card textarea{
-      min-height:120px;
+      height:auto;
+      min-height:126px;
       resize:vertical;
+      line-height:1.5;
     }
 
-    .form-card button{
+    .form-card input:focus,
+    .form-card select:focus,
+    .form-card textarea:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(77,141,255,.15);
+    }
+
+    .form-actions{
+      margin-top:20px;
+      display:grid;
+      gap:12px;
+    }
+
+    .form-card button,
+    .form-card .btn{
       width:100%;
-      min-height:50px;
+      min-height:52px;
       border:2px solid var(--blue);
       border-radius:3px;
       background:var(--blue);
@@ -407,11 +450,17 @@
       cursor:pointer;
     }
 
+    .form-card button:hover{
+      filter:brightness(.96);
+    }
+
+    .form-note,
     .small-note{
-      margin-top:12px;
+      display:block;
       font-size:13px;
       color:var(--muted);
       line-height:1.5;
+      margin:0;
     }
 
     footer{
@@ -439,8 +488,12 @@
       .comparison,
       .grid-three,
       .callout-inner,
-      .form-wrap{
+      .form-wrap,
+      .form-grid{
         grid-template-columns:1fr;
+      }
+      .form-grid .full{
+        grid-column:auto;
       }
       .form-wrap{padding:58px 20px}
     }
@@ -602,68 +655,73 @@
           </p>
         </div>
 
-        <!--
-          FORM SETUP NOTE:
-          This form matches the fields currently shown on runonharbor.com.
-          If your existing site already has a working form endpoint, paste that endpoint into action="" below.
-          GitHub Pages does not process forms by itself, so use your current form service, Formspree, Basin, Netlify Forms, HubSpot, etc.
-        -->
-        <form class="form-card" action="" method="POST">
+        <form class="form-card" action="https://formspree.io/f/xdarogbw" method="POST">
+          <input type="hidden" name="_subject" value="New Harbor Early Access Request">
+          <input type="hidden" name="_next" value="https://runonharbor.com/thank-you.html">
+          <input type="text" name="_gotcha" style="display:none">
+
           <div class="form-grid">
             <div>
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
+              <input id="name" name="name" type="text" autocomplete="name" required>
             </div>
+
             <div>
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
+              <input id="email" name="email" type="email" autocomplete="email" required>
             </div>
+
             <div>
               <label for="company">Company</label>
-              <input id="company" name="company" type="text" autocomplete="organization" />
+              <input id="company" name="company" type="text" autocomplete="organization">
             </div>
+
             <div>
               <label for="business_type">Business type</label>
               <select id="business_type" name="business_type" required>
                 <option value="" selected disabled>Select one</option>
-                <option>Industrial Distributor</option>
-                <option>Manufacturer</option>
-                <option>Parts Supplier</option>
-                <option>Service Company</option>
-                <option>Contractor / Fleet</option>
-                <option>Other</option>
+                <option value="Industrial Distributor">Industrial Distributor</option>
+                <option value="Manufacturer">Manufacturer</option>
+                <option value="Parts Supplier">Parts Supplier</option>
+                <option value="Service Company">Service Company</option>
+                <option value="Contractor / Fleet">Contractor / Fleet</option>
+                <option value="Other">Other</option>
               </select>
             </div>
+
             <div>
               <label for="company_size">Company size</label>
               <select id="company_size" name="company_size">
                 <option value="" selected disabled>Select one</option>
-                <option>1-10 employees</option>
-                <option>11-50 employees</option>
-                <option>51-250 employees</option>
-                <option>250+ employees</option>
+                <option value="1-10 employees">1-10 employees</option>
+                <option value="11-50 employees">11-50 employees</option>
+                <option value="51-250 employees">51-250 employees</option>
+                <option value="250+ employees">250+ employees</option>
               </select>
             </div>
+
             <div>
               <label for="interest">What are you most interested in?</label>
               <select id="interest" name="interest" required>
                 <option value="" selected disabled>Select one</option>
-                <option>Customer Portal</option>
-                <option>Quote Management</option>
-                <option>Asset Management</option>
-                <option>Order Tracking</option>
-                <option>Supplier Workflows</option>
-                <option>Internal Operations</option>
-                <option>Not Sure Yet</option>
+                <option value="Customer Portal">Customer Portal</option>
+                <option value="Quote Management">Quote Management</option>
+                <option value="Asset Management">Asset Management</option>
+                <option value="Order Tracking">Order Tracking</option>
+                <option value="Supplier Workflows">Supplier Workflows</option>
+                <option value="Internal Operations">Internal Operations</option>
+                <option value="Not Sure Yet">Not Sure Yet</option>
               </select>
             </div>
+
             <div class="full">
               <label for="message">What are you trying to improve?</label>
               <textarea id="message" name="message" placeholder="Example: We’re tracking quotes in email and spreadsheets and need a better way to manage follow-up."></textarea>
             </div>
           </div>
+
           <div class="form-actions">
-            <button class="btn" type="submit">Request a Demo</button>
+            <button type="submit">Request a Demo</button>
             <span class="form-note">We’ll review your note and follow up directly.</span>
           </div>
         </form>
