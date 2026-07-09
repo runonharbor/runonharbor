@@ -181,6 +181,19 @@
   color:#16263D;
   letter-spacing:-0.02em;
 }
+    .hero-closing{
+    margin-top:42px;
+    max-width:850px;
+    font-size:clamp(28px, 4vw, 42px);
+    line-height:1.15;
+    letter-spacing:-0.04em;
+    font-weight:800;
+    color:#16263D;
+}
+
+.hero-closing span{
+    color:#4D8DFF;
+}
 
 @media (max-width:800px){
 
@@ -211,6 +224,19 @@
 .hero-story strong{
   color:#16263D;
   font-weight:800;
+}
+    .hero-highlight-line{
+    margin:24px 0;
+}
+
+.hero-highlight{
+    background:linear-gradient(
+        transparent 45%,
+        rgba(255,242,120,.85) 45%
+    );
+    padding:0 4px;
+    font-weight:700;
+    color:#16263D;
 }
 
     .button{
@@ -601,9 +627,11 @@
     We were searching inboxes for the latest supplier pricing, digging through email threads to find customer conversations, trying to remember whether someone had followed up on a quote, and maintaining spreadsheets simply to keep track of what was happening.
   </p>
 
-  <p>
+  <p class="hero-highlight-line">
+  <span class="hero-highlight">
     Every time we encountered a new pain point, we built a better way to handle it.
-  </p>
+  </span>
+</p>
 
   <p>
     Over time, those solutions started connecting together.
@@ -617,9 +645,10 @@
     Today, we can run much of our business without searching through inboxes for the latest quote, digging through spreadsheets for information, or wondering whether something slipped through the cracks.
   </p>
 
-  <p class="hero-conclusion">
-  Harbor wasn't built from a business plan.<br> It was built while building a business.
-</p>
+ <div class="hero-closing">
+    Harbor wasn't built from a business plan.<br>
+    <span>It was built while building a business.</span>
+</div>
 </div>
 
     <div class="hero-actions">
