@@ -96,7 +96,119 @@ p{
   opacity:.85;
 
 }
+.letter-cta{
+  margin-top:70px;
+  padding-top:50px;
+  border-top:1px solid #DDE3EA;
+  text-align:center;
+}
 
+.letter-cta h2{
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.05;
+  letter-spacing:-.04em;
+  margin:0 0 18px;
+  color:#16263D;
+}
+
+.letter-cta p{
+  max-width:620px;
+  margin:0 auto 28px;
+  color:#5B6675;
+}
+
+.letter-button{
+  background:#4D8DFF;
+  color:#fff;
+  border:2px solid #4D8DFF;
+  border-radius:3px;
+  padding:14px 22px;
+  font-weight:800;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.harbor-form-box{
+  display:none;
+  margin-top:36px;
+  text-align:left;
+}
+
+.form-card{
+  border:2px solid #16263D;
+  border-radius:3px;
+  padding:28px;
+  background:#fff;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.form-grid .full{
+  grid-column:1 / -1;
+}
+
+.form-card label{
+  display:block;
+  color:#16263D;
+  font-size:14px;
+  font-weight:800;
+  margin:0 0 7px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+  width:100%;
+  height:48px;
+  border:1px solid #BFC9D4;
+  border-radius:2px;
+  padding:12px;
+  font:inherit;
+  font-size:16px;
+}
+
+.form-card textarea{
+  min-height:126px;
+  height:auto;
+  resize:vertical;
+}
+
+.form-actions{
+  margin-top:20px;
+  display:grid;
+  gap:12px;
+}
+
+.form-actions button{
+  width:100%;
+  min-height:52px;
+  border:2px solid #4D8DFF;
+  border-radius:3px;
+  background:#4D8DFF;
+  color:#fff;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.form-note{
+  font-size:13px;
+  color:#5B6675;
+}
+
+@media(max-width:700px){
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid .full{
+    grid-column:auto;
+  }
+}
 .signature-name{
   font-weight:700;
   margin-top:6px;
@@ -274,7 +386,108 @@ p{
     </div>
 
   </article>
-</main>
+  <section class="letter-cta">
+  <h2>Want to see if Harbor would be a good fit for your business?</h2>
 
+  <p>
+    Tell us a little about your business and what you’re trying to organize.
+    We’ll follow up personally.
+  </p>
+
+  <button type="button" class="letter-button" onclick="toggleHarborForm()">
+    Request a Demo
+  </button>
+
+  <div id="harbor-form-box" class="harbor-form-box">
+    <form
+      class="form-card"
+      action="https://formspree.io/f/xdarogbw"
+      method="POST"
+      id="harbor-form"
+    >
+      <input type="hidden" name="_subject" value="New Harbor Early Access Request">
+      <input type="hidden" name="_next" value="https://runonharbor.com/thank-you.html">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div class="form-grid">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization">
+        </div>
+
+        <div>
+          <label for="business_type">Business type</label>
+          <select id="business_type" name="business_type" required>
+            <option value="" selected disabled>Select one</option>
+            <option value="Industrial Distributor">Industrial Distributor</option>
+            <option value="Manufacturer">Manufacturer</option>
+            <option value="Parts Supplier">Parts Supplier</option>
+            <option value="Service Company">Service Company</option>
+            <option value="Contractor / Fleet">Contractor / Fleet</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="company_size">Company size</label>
+          <select id="company_size" name="company_size">
+            <option value="" selected disabled>Select one</option>
+            <option value="1-10 employees">1-10 employees</option>
+            <option value="11-50 employees">11-50 employees</option>
+            <option value="51-250 employees">51-250 employees</option>
+            <option value="250+ employees">250+ employees</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="interest">What are you most interested in?</label>
+          <select id="interest" name="interest" required>
+            <option value="" selected disabled>Select one</option>
+            <option value="Customer Portal">Customer Portal</option>
+            <option value="Quote Management">Quote Management</option>
+            <option value="Asset Management">Asset Management</option>
+            <option value="Order Tracking">Order Tracking</option>
+            <option value="Supplier Workflows">Supplier Workflows</option>
+            <option value="Internal Operations">Internal Operations</option>
+            <option value="Not Sure Yet">Not Sure Yet</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="message">What are you trying to improve?</label>
+          <textarea id="message" name="message" placeholder="Example: We’re tracking quotes in email and spreadsheets and need a better way to manage follow-up."></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Request a Demo</button>
+        <span class="form-note">We’ll review your note and follow up directly.</span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+<script>
+function toggleHarborForm(){
+  const box = document.getElementById('harbor-form-box');
+
+  if(box.style.display === 'block'){
+    box.style.display = 'none';
+  } else {
+    box.style.display = 'block';
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
 </body>
 </html>
