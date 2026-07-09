@@ -146,6 +146,45 @@
       align-items:center;
       gap:16px;
     }
+    .hero-secondary{
+  margin-top:10px;
+  font-size:clamp(42px, 6vw, 72px);
+  line-height:1;
+  letter-spacing:-0.06em;
+  font-weight:800;
+  color:#4D8DFF;
+}
+
+.hero-copy-secondary{
+  margin-top:18px;
+  max-width:760px;
+  font-size:20px;
+  line-height:1.65;
+  color:#4A5664;
+}
+
+.hero-quote{
+  margin-top:42px;
+  max-width:900px;
+  padding-left:24px;
+  border-left:5px solid #4D8DFF;
+  font-size:30px;
+  line-height:1.25;
+  letter-spacing:-0.04em;
+  color:#16263D;
+  font-weight:750;
+}
+
+@media (max-width:800px){
+
+  .hero-secondary{
+    font-size:clamp(32px, 8vw, 50px);
+  }
+
+  .hero-quote{
+    font-size:24px;
+  }
+}
 
     .button{
       display:inline-flex;
@@ -506,39 +545,54 @@
     <nav class="nav">
       <a class="brand" href="#">Harbor</a>
       <div class="nav-links">
-        <a href="#why">Why Harbor</a>
         <a href="#story">Our Story</a>
-        <a href="#contact" class="nav-cta">Tell Your Story</a>
+        <a href="/why-harbor">Read Our Story</a>
       </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-inner">
-        <span class="eyebrow">A simpler way to run the work behind the work.</span>
-        <h1>Your business shouldn't run from an inbox.</h1>
+  <div class="hero-inner">
 
-        <p class="hero-copy">
-          Customer requests. Supplier pricing. Quote opportunities. Equipment records.
-          Purchase orders. Follow-ups. At some point, they all become harder to manage
-          than the work itself.
-        </p>
+    <span class="eyebrow">
+      Built while growing a real business.
+    </span>
 
-        <ul class="stacked-lines" aria-label="Common operational details Harbor organizes">
-          <li>Customer requests</li>
-          <li>Supplier pricing</li>
-          <li>Open quotes</li>
-          <li>Equipment records</li>
-          <li>Purchase orders</li>
-          <li>Follow-ups</li>
-        </ul>
+    <h1>
+      Growing the business<br>
+      wasn't the hard part.
+    </h1>
 
-        <div class="hero-actions">
-          <a class="button secondary" href="#story">Read Our Story</a>
-        </div>
-      </div>
-    </section>
+    <div class="hero-secondary">
+      Keeping everything organized was.
+    </div>
+
+    <p class="hero-copy">
+      As CSC grew, we found ourselves spending more time managing information than serving customers.
+    </p>
+
+    <p class="hero-copy-secondary">
+      Customer requests, supplier conversations, pricing, quotes, orders, equipment records, and follow-ups were scattered across emails, spreadsheets, and disconnected systems.
+    </p>
+
+    <p class="hero-copy-secondary">
+      Harbor was built to solve that problem.
+    </p>
+
+    <div class="hero-actions">
+      <a class="button secondary" href="#story">
+        Read Our Story
+      </a>
+
+    </div>
+
+    <div class="hero-quote">
+      "Our inbox became our CRM. Our spreadsheet became our ERP. Our follow-up list became another thing to manage."
+    </div>
+
+  </div>
+</section>
 
     <section id="why" class="section section-narrow">
       <h2>It worked. Until it didn't.</h2>
