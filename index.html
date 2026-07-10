@@ -69,12 +69,13 @@
 
     .hero{
       background:#fff;
+      padding: 60px 20px;
     }
 
     .hero-inner{
-      max-width:1120px;
-      margin:0 auto;
-      padding:82px 24px 76px;
+      max-width:1100px;
+     
+      
     }
 
     .eyebrow{
@@ -112,15 +113,26 @@
       line-height:1.7;
       color:#2E3A48;
     }
+    .hero-copy {
+  max-width: 850px;    /* controls line length */
+}
 
     .hero-story p{
       margin:0 0 18px;
     }
+    .hero-copy h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: .95;
+}
 
     .hero-highlight-line{
       margin:24px 0;
     }
-
+.hero-sketch {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+}
     
     .hero-highlight{
     background:linear-gradient(
@@ -521,21 +533,26 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-
-        <span class="eyebrow">Built while growing a real business.</span>
+<div class="hero-copy">
+        <span>Built while growing a real business.</span>
+      
 
         <h1>
           Growing the business<br>
-          wasn't the hard part.
-        </h1>
-        <div class="hero-secondary">
-          Keeping everything organized was.
-        </div>
+          wasn't the hard part.<br>
+        
+  </div>
+        
+         <span> Keeping everything organized was.</span>
+      </h1>
+      </div>
         <img
       class="hero-sketch"
       src="hero-banner.png"
       alt="Harbor Organization Illustration"
     >
+      </div>
+    </section>
 
         
 
